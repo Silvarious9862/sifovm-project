@@ -13,8 +13,9 @@
 --applicable agreement for further details.
 
 
-FUNCTION lpm_ff0 
+FUNCTION lpm_ff2 
 (
+	aclr,
 	clock,
 	data[15..0],
 	enable

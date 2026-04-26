@@ -13,13 +13,19 @@
 --applicable agreement for further details.
 
 
-FUNCTION lpm_ff0 
+FUNCTION lpm_mux0 
 (
-	clock,
-	data[15..0],
-	enable
+	data0x[15..0],
+	data1x[15..0],
+	data2x[15..0],
+	data3x[15..0],
+	data4x[15..0],
+	data5x[15..0],
+	data6x[15..0],
+	data7x[15..0],
+	sel[2..0]
 )
 
 RETURNS (
-	q[15..0]
+	result[15..0]
 );

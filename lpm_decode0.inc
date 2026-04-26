@@ -13,13 +13,18 @@
 --applicable agreement for further details.
 
 
-FUNCTION lpm_ff0 
+FUNCTION lpm_decode0 
 (
-	clock,
-	data[15..0],
-	enable
+	data[2..0]
 )
 
 RETURNS (
-	q[15..0]
+	eq0,
+	eq1,
+	eq2,
+	eq3,
+	eq4,
+	eq5,
+	eq6,
+	eq7
 );

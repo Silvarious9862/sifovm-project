@@ -4,7 +4,7 @@
 -- MODULE: lpm_ff 
 
 -- ============================================================
--- File Name: lpm_ff0.tdf
+-- File Name: lpm_ff1.tdf
 -- Megafunction Name(s):
 -- 			lpm_ff
 --
@@ -36,12 +36,13 @@ INCLUDE "lpm_ff.inc";
 
 
 
-SUBDESIGN lpm_ff0
+SUBDESIGN lpm_ff1
 (
+	aclr	 : INPUT;
 	clock	 : INPUT;
-	data[15..0]	 : INPUT;
+	data[11..0]	 : INPUT;
 	enable	 : INPUT;
-	q[15..0]	 : OUTPUT;
+	q[11..0]	 : OUTPUT;
 )
 
 VARIABLE
@@ -49,15 +50,16 @@ VARIABLE
 	lpm_ff_component : lpm_ff WITH (
 			LPM_FFTYPE = "DFF",
 			LPM_TYPE = "LPM_FF",
-			LPM_WIDTH = 16
+			LPM_WIDTH = 12
 			);
 
 BEGIN
 
-	q[15..0] = lpm_ff_component.q[15..0];
+	q[11..0] = lpm_ff_component.q[11..0];
 	lpm_ff_component.enable = enable;
+	lpm_ff_component.aclr = aclr;
 	lpm_ff_component.clock = clock;
-	lpm_ff_component.data[15..0] = data[15..0];
+	lpm_ff_component.data[11..0] = data[11..0];
 END;
 
 
@@ -65,7 +67,7 @@ END;
 -- ============================================================
 -- CNX file retrieval info
 -- ============================================================
--- Retrieval info: PRIVATE: ACLR NUMERIC "0"
+-- Retrieval info: PRIVATE: ACLR NUMERIC "1"
 -- Retrieval info: PRIVATE: ALOAD NUMERIC "0"
 -- Retrieval info: PRIVATE: ASET NUMERIC "0"
 -- Retrieval info: PRIVATE: ASET_ALL1 NUMERIC "1"
@@ -78,22 +80,24 @@ END;
 -- Retrieval info: PRIVATE: SSET_ALL1 NUMERIC "1"
 -- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 -- Retrieval info: PRIVATE: UseTFFdataPort NUMERIC "0"
--- Retrieval info: PRIVATE: nBit NUMERIC "16"
+-- Retrieval info: PRIVATE: nBit NUMERIC "12"
 -- Retrieval info: CONSTANT: LPM_FFTYPE STRING "DFF"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_FF"
--- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "16"
+-- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "12"
+-- Retrieval info: USED_PORT: aclr 0 0 0 0 INPUT NODEFVAL aclr
 -- Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL clock
--- Retrieval info: USED_PORT: data 0 0 16 0 INPUT NODEFVAL data[15..0]
+-- Retrieval info: USED_PORT: data 0 0 12 0 INPUT NODEFVAL data[11..0]
 -- Retrieval info: USED_PORT: enable 0 0 0 0 INPUT NODEFVAL enable
--- Retrieval info: USED_PORT: q 0 0 16 0 OUTPUT NODEFVAL q[15..0]
+-- Retrieval info: USED_PORT: q 0 0 12 0 OUTPUT NODEFVAL q[11..0]
 -- Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
--- Retrieval info: CONNECT: q 0 0 16 0 @q 0 0 16 0
+-- Retrieval info: CONNECT: q 0 0 12 0 @q 0 0 12 0
 -- Retrieval info: CONNECT: @enable 0 0 0 0 enable 0 0 0 0
--- Retrieval info: CONNECT: @data 0 0 16 0 data 0 0 16 0
+-- Retrieval info: CONNECT: @aclr 0 0 0 0 aclr 0 0 0 0
+-- Retrieval info: CONNECT: @data 0 0 12 0 data 0 0 12 0
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff0.tdf TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff0.inc TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff0.cmp FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff0.bsf TRUE FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff0_inst.tdf FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff1.tdf TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff1.inc TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff1.cmp FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff1.bsf TRUE FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff1_inst.tdf FALSE
 -- Retrieval info: LIB_FILE: lpm

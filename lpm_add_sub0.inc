@@ -13,13 +13,11 @@
 --applicable agreement for further details.
 
 
-FUNCTION lpm_ff0 
+FUNCTION lpm_add_sub0 
 (
-	clock,
-	data[15..0],
-	enable
+	dataa[11..0]
 )
 
 RETURNS (
-	q[15..0]
+	result[11..0]
 );
