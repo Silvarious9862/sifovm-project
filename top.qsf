@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Stratix II"
 set_global_assignment -name DEVICE AUTO
-set_global_assignment -name TOP_LEVEL_ENTITY ir_unit
+set_global_assignment -name TOP_LEVEL_ENTITY top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 9.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:55:17  APRIL 20, 2026"
 set_global_assignment -name LAST_QUARTUS_VERSION 9.1
@@ -61,9 +61,58 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE ip_unit.vwf
 set_global_assignment -name BDF_FILE ir_unit.bdf
 set_global_assignment -name VECTOR_WAVEFORM_FILE ir_unit.vwf
 set_global_assignment -name QIP_FILE lpm_ff2.qip
+set_global_assignment -name QIP_FILE lpm_ff3.qip
+set_global_assignment -name BDF_FILE fr_unit.bdf
+set_global_assignment -name BDF_FILE ALU.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE ALU.vwf
+set_global_assignment -name QIP_FILE lpm_add_sub1.qip
+set_global_assignment -name QIP_FILE lpm_mux2.qip
+set_global_assignment -name QIP_FILE lpm_decode1.qip
+set_global_assignment -name QIP_FILE lpm_mux3.qip
+set_global_assignment -name QIP_FILE lpm_compare0.qip
+set_global_assignment -name QIP_FILE lpm_compare1.qip
+set_global_assignment -name QIP_FILE lpm_compare2.qip
+set_global_assignment -name QIP_FILE lpm_mux4.qip
+set_global_assignment -name QIP_FILE lpm_mux5.qip
+set_global_assignment -name QIP_FILE lpm_clshift0.qip
+set_global_assignment -name QIP_FILE lpm_constant0.qip
+set_global_assignment -name QIP_FILE lpm_rom0.qip
+set_global_assignment -name BDF_FILE memory_unit.bdf
+set_global_assignment -name MIF_FILE MEMORY.mif
+set_global_assignment -name VECTOR_WAVEFORM_FILE memory_unit.vwf
+set_global_assignment -name QIP_FILE altsyncram0.qip
+set_global_assignment -name QIP_FILE lpm_mux6.qip
+set_global_assignment -name BDF_FILE cmd_decoder.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE cmd_decoder.vwf
+set_global_assignment -name QIP_FILE lpm_compare3.qip
+set_global_assignment -name QIP_FILE lpm_ff4.qip
+set_global_assignment -name QIP_FILE lpm_compare4.qip
+set_global_assignment -name QIP_FILE lpm_compare5.qip
+set_global_assignment -name QIP_FILE lpm_compare6.qip
+set_global_assignment -name QIP_FILE lpm_compare7.qip
+set_global_assignment -name QIP_FILE lpm_compare8.qip
+set_global_assignment -name QIP_FILE lpm_compare9.qip
+set_global_assignment -name QIP_FILE lpm_compare10.qip
+set_global_assignment -name QIP_FILE lpm_compare11.qip
+set_global_assignment -name QIP_FILE lpm_compare12.qip
+set_global_assignment -name BDF_FILE phase_gen.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE phase_gen.vwf
+set_global_assignment -name QIP_FILE lpm_counter0.qip
+set_global_assignment -name QIP_FILE lpm_decode2.qip
+set_global_assignment -name BDF_FILE CONTROL.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE CONTROL.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE top.vwf
+set_global_assignment -name QIP_FILE "../labs/Laba 6/lpm_dff1.qip"
+set_global_assignment -name QIP_FILE lpm_dff0.qip
+set_global_assignment -name QIP_FILE lpm_ff5.qip
+set_global_assignment -name QIP_FILE altsyncram1.qip
+set_global_assignment -name QIP_FILE lpm_mux7.qip
+set_global_assignment -name QIP_FILE lpm_decode3.qip
+set_global_assignment -name QIP_FILE lpm_decode4.qip
+set_global_assignment -name QIP_FILE lpm_mux8.qip
+set_global_assignment -name QIP_FILE lpm_ff6.qip
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE ir_unit.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
