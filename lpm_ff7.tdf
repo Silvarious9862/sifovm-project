@@ -1,12 +1,12 @@
--- megafunction wizard: %LPM_COUNTER%
+-- megafunction wizard: %LPM_FF%
 -- GENERATION: STANDARD
 -- VERSION: WM1.0
--- MODULE: lpm_counter 
+-- MODULE: lpm_ff 
 
 -- ============================================================
--- File Name: lpm_counter0.tdf
+-- File Name: lpm_ff7.tdf
 -- Megafunction Name(s):
--- 			lpm_counter
+-- 			lpm_ff
 --
 -- Simulation Library Files(s):
 -- 			lpm
@@ -32,34 +32,34 @@
 --Altera or its authorized distributors.  Please refer to the 
 --applicable agreement for further details.
 
-INCLUDE "lpm_counter.inc";
+INCLUDE "lpm_ff.inc";
 
 
 
-SUBDESIGN lpm_counter0
+SUBDESIGN lpm_ff7
 (
 	aclr	 : INPUT;
 	clock	 : INPUT;
-	cnt_en	 : INPUT;
+	data[2..0]	 : INPUT;
+	enable	 : INPUT;
 	q[2..0]	 : OUTPUT;
 )
 
 VARIABLE
 
-	lpm_counter_component : lpm_counter WITH (
-			LPM_DIRECTION = "UP",
-			LPM_MODULUS = 7,
-			LPM_PORT_UPDOWN = "PORT_UNUSED",
-			LPM_TYPE = "LPM_COUNTER",
+	lpm_ff_component : lpm_ff WITH (
+			LPM_FFTYPE = "DFF",
+			LPM_TYPE = "LPM_FF",
 			LPM_WIDTH = 3
 			);
 
 BEGIN
 
-	q[2..0] = lpm_counter_component.q[2..0];
-	lpm_counter_component.aclr = aclr;
-	lpm_counter_component.clock = clock;
-	lpm_counter_component.cnt_en = cnt_en;
+	q[2..0] = lpm_ff_component.q[2..0];
+	lpm_ff_component.enable = enable;
+	lpm_ff_component.aclr = aclr;
+	lpm_ff_component.clock = clock;
+	lpm_ff_component.data[2..0] = data[2..0];
 END;
 
 
@@ -70,40 +70,34 @@ END;
 -- Retrieval info: PRIVATE: ACLR NUMERIC "1"
 -- Retrieval info: PRIVATE: ALOAD NUMERIC "0"
 -- Retrieval info: PRIVATE: ASET NUMERIC "0"
--- Retrieval info: PRIVATE: ASET_ALL1 NUMERIC "0"
--- Retrieval info: PRIVATE: CLK_EN NUMERIC "0"
--- Retrieval info: PRIVATE: CNT_EN NUMERIC "1"
--- Retrieval info: PRIVATE: CarryIn NUMERIC "0"
--- Retrieval info: PRIVATE: CarryOut NUMERIC "0"
--- Retrieval info: PRIVATE: Direction NUMERIC "0"
+-- Retrieval info: PRIVATE: ASET_ALL1 NUMERIC "1"
+-- Retrieval info: PRIVATE: CLK_EN NUMERIC "1"
+-- Retrieval info: PRIVATE: DFF NUMERIC "1"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Stratix II"
--- Retrieval info: PRIVATE: ModulusCounter NUMERIC "1"
--- Retrieval info: PRIVATE: ModulusValue NUMERIC "7"
 -- Retrieval info: PRIVATE: SCLR NUMERIC "0"
 -- Retrieval info: PRIVATE: SLOAD NUMERIC "0"
 -- Retrieval info: PRIVATE: SSET NUMERIC "0"
 -- Retrieval info: PRIVATE: SSET_ALL1 NUMERIC "1"
 -- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
+-- Retrieval info: PRIVATE: UseTFFdataPort NUMERIC "0"
 -- Retrieval info: PRIVATE: nBit NUMERIC "3"
--- Retrieval info: CONSTANT: LPM_DIRECTION STRING "UP"
--- Retrieval info: CONSTANT: LPM_MODULUS NUMERIC "7"
--- Retrieval info: CONSTANT: LPM_PORT_UPDOWN STRING "PORT_UNUSED"
--- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_COUNTER"
+-- Retrieval info: CONSTANT: LPM_FFTYPE STRING "DFF"
+-- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_FF"
 -- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "3"
 -- Retrieval info: USED_PORT: aclr 0 0 0 0 INPUT NODEFVAL aclr
 -- Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL clock
--- Retrieval info: USED_PORT: cnt_en 0 0 0 0 INPUT NODEFVAL cnt_en
+-- Retrieval info: USED_PORT: data 0 0 3 0 INPUT NODEFVAL data[2..0]
+-- Retrieval info: USED_PORT: enable 0 0 0 0 INPUT NODEFVAL enable
 -- Retrieval info: USED_PORT: q 0 0 3 0 OUTPUT NODEFVAL q[2..0]
 -- Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
 -- Retrieval info: CONNECT: q 0 0 3 0 @q 0 0 3 0
--- Retrieval info: CONNECT: @cnt_en 0 0 0 0 cnt_en 0 0 0 0
+-- Retrieval info: CONNECT: @enable 0 0 0 0 enable 0 0 0 0
 -- Retrieval info: CONNECT: @aclr 0 0 0 0 aclr 0 0 0 0
+-- Retrieval info: CONNECT: @data 0 0 3 0 data 0 0 3 0
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter0.tdf TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter0.inc TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter0.cmp FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter0.bsf TRUE FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter0_inst.tdf FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter0_waveforms.html TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter0_wave*.jpg FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff7.tdf TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff7.inc TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff7.cmp FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff7.bsf TRUE FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff7_inst.tdf FALSE
 -- Retrieval info: LIB_FILE: lpm

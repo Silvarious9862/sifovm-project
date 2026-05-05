@@ -13,17 +13,11 @@
 --applicable agreement for further details.
 
 
-FUNCTION lpm_decode2 
+FUNCTION lpm_compare14 
 (
-	data[2..0]
+	dataa[7..0]
 )
 
 RETURNS (
-	eq0,
-	eq1,
-	eq2,
-	eq3,
-	eq4,
-	eq5,
-	eq6
+	AeB
 );
