@@ -54,3 +54,7 @@ simulation/
 incremental_db/
 db/
 _output_files/
+docs/template/
+~*.doc?
+~*.doc
+*.tmp
